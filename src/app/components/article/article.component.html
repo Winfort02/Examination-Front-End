@@ -1,0 +1,29 @@
+<div class="article-container">
+  <div class="article-content">
+      <h1> LIST OF ARTICLE </h1>
+      <button> Add Artcile </button>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>PUBLISH DATE</th>
+            <th colspan="2" style="width: 100px;">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles">
+            <td> {{ article.id }} </td>
+            <td> {{ article.title }} </td>
+            <td> {{ article.description }} </td>
+            <td> {{ article.publish_date | date: 'MMM-dd-Y' }} </td>
+            <td>
+              <button style="width: 50px;" (click)="edit(article.id )">Edit</button>
+              <button style="width: 50px;">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
